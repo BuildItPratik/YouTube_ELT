@@ -98,6 +98,7 @@ x-airflow-common:
     - ./include:/opt/airflow/include
     - ./logs:/opt/airflow/logs
     - ./plugins:/opt/airflow/plugins
+    - ./include/soda:/opt/airflow/include/soda
     - ./tests:/opt/airflow/tests
   user: "${AIRFLOW_UID}:0"
   depends_on:
@@ -317,8 +318,8 @@ services:
       <<: *airflow-common-env
       _AIRFLOW_DB_MIGRATE: 'true'
       _AIRFLOW_WWW_USER_CREATE: 'true'
-      _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
-      _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
+      _AIRFLOW_WWW_USER_USERNAME: ${AIRFLOW_WWW_USER_USERNAME}
+      _AIRFLOW_WWW_USER_PASSWORD: ${AIRFLOW_WWW_USER_PASSWORd}
       _PIP_ADDITIONAL_REQUIREMENTS: ''
     user: "0:0"
  
