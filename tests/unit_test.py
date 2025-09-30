@@ -40,6 +40,7 @@ def test_dags_integrity(dagbag):
         "data_quality": 2,
     }
     print("===========")
+    
     for dag_id, dag in dagbag.dags.items():
         expected_count = expected_task_counts[dag_id]
         actual_count = len(dag.tasks)
