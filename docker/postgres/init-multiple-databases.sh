@@ -37,6 +37,6 @@ EOSQL
 # Create databases
 create_user_and_database "$METADATA_DATABASE_NAME" "$METADATA_DATABASE_USERNAME" "$METADATA_DATABASE_PASSWORD"
 create_user_and_database "$CELERY_BACKEND_NAME" "$CELERY_BACKEND_USERNAME" "$CELERY_BACKEND_PASSWORD"
-create_user_and_database "$ELT_DATABASE_NAME" "$ELT_DATABASE_USERNAME" "$ELT_DATABASE_PASSWORD"
+create_user_and_database "$ELT_DATABASE_NAME" "yt_api_user" "$ELT_DATABASE_PASSWORD"
 
 echo "✅ All databases and users created successfully."
